@@ -1,11 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import Image from 'next/image'
+
+
+import contactImage from '../assets/img/undraw_News_re_6uub.png'
 
 function Contact({className}) {
   return (
     <section className={className}>
+        
         <div className="contacto-img">
-            <img src="img/undraw_News_re_6uub.png" alt=""/>
+            <Image src={contactImage} width={500} alt=""/>
         </div>
         <div className="contacto-text ">
             <h2>Suscribete para recibir Noticias</h2>
@@ -19,10 +24,18 @@ function Contact({className}) {
   )
 }
 export default styled(Contact)`
-    .contacto {
-    flex-wrap: nowrap
+    
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+ 
+.contacto-img{
+    width:50%;
 }
-
 .contacto-img img {
     width: 350px;
 }

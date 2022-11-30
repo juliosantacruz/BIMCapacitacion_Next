@@ -1,24 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
-
-
+import jsLogo from '../assets/img/logo_450x200_azul_trans.png'
 function Footer({className}) {
   return (
-    <footer class={className}>
-      <div class="js-dev footer-section">
-        <img src="img/logo_450x200_azul_trans.png" alt="" />
+    <footer className={className}>
+      <div className="js-dev footer-section">
+        <Image src={jsLogo} width={300} alt="" />
       </div>
 
-      <div class="redes-sociales footer-section">
-        <a class="facebook" href="#">
-          <i class="bx bxl-facebook"></i>
+      <div className="redes-sociales footer-section">
+        <a className="facebook" href="#">
+          <i className="bx bxl-facebook"></i>
         </a>
-        <a class="instagram" href="#">
-          <i class="bx bxl-instagram"></i>
+        <a className="instagram" href="#">
+          <i className="bx bxl-instagram"></i>
         </a>
-        <a class="youtube" href="#">
-          <i class="bx bxl-youtube"></i>
+        <a className="youtube" href="#">
+          <i className="bx bxl-youtube"></i>
         </a>
       </div>
     </footer>
@@ -26,6 +26,12 @@ function Footer({className}) {
 }
 export default styled(Footer)`
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
 width: 100%;
     max-width: 2000px;
     background-color: rgba(230, 230, 230, 0.658);

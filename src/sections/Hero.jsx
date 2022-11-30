@@ -41,11 +41,6 @@ export default styled(Hero)`
     border-radius: 30px;
   }
 
-  .title h1 {
-    font-size: 40px;
-  }
-
-  .title p {
-    font-size: 20px;
-  }
+ 
+ 
 `;

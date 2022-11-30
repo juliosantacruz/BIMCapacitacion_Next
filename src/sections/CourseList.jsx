@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
-import casaContainer from '../assets/img/Casa-conteiner.jpg'
+import LogoTransparente from '../assets/img/1Logo-BIM-Capacitacion-transparente.png'
 
 
 
@@ -34,7 +34,7 @@ function CourseList({className}) {
                 </ul>
             </div>
             <div className="listado-cursos-img"> 
-                <Image src={casaContainer} alt="" width={500}   />
+                <Image src={LogoTransparente} alt="" width={500}   />
             </div>
         </div>
     </section>
@@ -74,12 +74,12 @@ export default styled(CourseList)`
 .listado-cursos-img {
     width: 500px;
      
-    border-radius: 80px;
+    
 }
 
 .listado-cursos-img img {
     width: 100%;
-    border-radius: 80px;border: 2px solid black;
+     
 }
 
 `

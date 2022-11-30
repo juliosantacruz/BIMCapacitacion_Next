@@ -41,12 +41,12 @@ export default styled(Questions)`
     min-height: 500px;
 }
 
-.questions .text {
+ .text {
     width: 500px;
     margin: auto;
 }
 
-.questions h2 {
+  h2 {
     padding-bottom: 30px;
 }
 
