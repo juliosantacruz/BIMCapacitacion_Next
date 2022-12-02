@@ -6,7 +6,13 @@ import Link from 'next/link'
 import logo from '../assets/img/1Logo-BIM-Capacitacion-768x432-1.png'
 
 
+
+
  function Navbar({className}) {
+
+
+
+
   return (
     <nav className={className}>
             <section className=" nav">

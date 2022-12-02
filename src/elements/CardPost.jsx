@@ -4,12 +4,12 @@ import styled from "styled-components";
 
 import cardImage1 from "../assets/img/COMO DESCARGAR E INSTALAR REVIT 2020.jpg";
 
-function CardPost({ className }) {
+function CardPost({ className, post }) {
   return (
     <a href="#tarjeta">
       <article className={className}>
         <div className="tarjeta-texto">
-          <h2>Soy el titutlo de la publiacion</h2>
+          <h2>{post.title}</h2>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius rerum
             et, nisi est itaque nemo placeat asperiores! Officiis soluta nostrum
