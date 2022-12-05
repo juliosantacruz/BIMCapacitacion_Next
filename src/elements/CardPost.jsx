@@ -1,20 +1,22 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 
 import cardImage1 from "../assets/img/COMO DESCARGAR E INSTALAR REVIT 2020.jpg";
 
 function CardPost({ className, post }) {
   return (
-    <a href="#tarjeta">
+    <Link
+      href={{
+        pathname: `/post/${post.slug}`,
+        query: { id: post.id },
+      }}
+    >
       <article className={className}>
         <div className="tarjeta-texto">
           <h2>{post.title}</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius rerum
-            et, nisi est itaque nemo placeat asperiores! Officiis soluta nostrum
-            und voluptas adipisci laboriosam.
-          </p>
+          <p>Aqui va el overview :D</p>
           <div className="tarjeta-categorias">
             <b>REVIT - TUTORIAL - ARQUITECTURA</b>
           </div>
@@ -23,7 +25,7 @@ function CardPost({ className, post }) {
           <Image src={cardImage1} width={500} alt="" />
         </div>
       </article>
-    </a>
+    </Link>
   );
 }
 export default styled(CardPost)`
@@ -52,7 +54,7 @@ export default styled(CardPost)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height:100%;
+    height: 100%;
   }
 
   .tarjeta-texto h2 {
@@ -61,11 +63,9 @@ export default styled(CardPost)`
   }
   .tarjeta-texto h2 {
     margin: 10px 0;
-    
   }
   .tarjeta-texto p {
     margin: 10px 0;
-    
   }
   img {
     height: 160px;
