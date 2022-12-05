@@ -24,7 +24,7 @@ export default styled(Hero)`
   background-position: bottom;
 
   /* Titulo */
-  padding: 0 0 50px 0;
+  /* padding: 0 0 50px 0; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -33,12 +33,16 @@ export default styled(Hero)`
   text-align: center;
 
   .title {
+    width:100%;
     display: block;
-    right: 30px;
+    /* right: 30px; */
     color: white;
     background-color: RGBA(0, 0, 0, 0.6);
-    padding: 40px;
+    padding: 30px;
     border-radius: 30px;
+  }
+  .title h1{
+    font-size:30px;
   }
 
  

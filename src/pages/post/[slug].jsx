@@ -4,32 +4,35 @@ import { useRouter } from "next/router";
 import { useState } from 'react'
 import { useFetch } from '../../hooks/useFetch'
 import endpoints from '../../services/api/index'
-
+import styled from 'styled-components';
 
 const URL = endpoints.posts.post_detail(1)
 // console.log(URL)
 
 
-export default function Slug() {
+function Slug({className}) {
   const router = useRouter()
 
-  const postId = router.query.id
-  // console.log(postId)
+  const postSlug = router.query.slug
+  console.log(postSlug)
 
-  const data = useFetch(endpoints.posts.post_detail(postId))
-
+  const post = useFetch(endpoints.posts.post_detail(postSlug))
+  console.log(post)
  
   
 
 
 
   return (
-    <section>
+    <section className={className}>
       <div>
-        <h1>{data.title}</h1>
+        <button><i className='bx bx-chevrons-left'></i> Regresar</button>
+      </div>
+      <div>
+        <h1>{post?.title}</h1>
       </div>
 
-      <div dangerouslySetInnerHTML={{__html: data.content}}>
+      <div dangerouslySetInnerHTML={{__html: post?.content}}>
         
       </div>
 
@@ -37,3 +40,12 @@ export default function Slug() {
     </section>
   )
 }
+
+export default styled(Slug)`
+  width:80vw;
+  margin: 0 auto;
+  iframe{
+    width:100%;
+    height:auto;
+  }
+`

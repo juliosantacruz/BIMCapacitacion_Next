@@ -10,7 +10,7 @@ function CardPost({ className, post }) {
     <Link
       href={{
         pathname: `/post/${post.slug}`,
-        query: { id: post.id },
+        
       }}
     >
       <article className={className}>
@@ -30,10 +30,11 @@ function CardPost({ className, post }) {
 }
 export default styled(CardPost)`
   display: flex;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
   width: 650px;
-  height: 250px;
+  height: 100%;
   border: solid 1px black;
   border-radius: 30px;
   box-shadow: 20px 10px rgba(0, 0, 0, 0.39);
@@ -67,8 +68,8 @@ export default styled(CardPost)`
   .tarjeta-texto p {
     margin: 10px 0;
   }
-  img {
-    height: 160px;
+  .tarjeta-img>img {
+    height: 120px;
     width: auto;
   }
 
@@ -80,4 +81,9 @@ export default styled(CardPost)`
   .tarjeta-icons {
     display: block;
   }
+
+  @media screen and (max-width: 650px) {
+    width: 80%;
+  }
+
 `;

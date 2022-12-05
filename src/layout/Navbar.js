@@ -17,7 +17,8 @@ import logo from '../assets/img/1Logo-BIM-Capacitacion-768x432-1.png'
     <nav className={className}>
             <section className=" nav">
                 <div className="logo">
-                    <Image src={logo} alt="soy un logo"/>
+                    <Link href='/'>
+                    <Image src={logo} alt="soy un logo"/></Link>
                 </div>
                 <div className="enlaces-header">
                     <Link href="/">Inicio</Link>

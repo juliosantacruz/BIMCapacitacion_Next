@@ -46,18 +46,19 @@ export default styled(CourseList)`
 
     width: 100%;
     max-width: 2000px;
-    background-color: rgba(230, 230, 230, 0.658);
+    background-color: #EFEFEF;
 
 
 .seccion-listado {
     display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
     padding-bottom: 50px;
 }
 
 .listado-cursos {
-    width: 500px;
+    width: 100%;
 }
 
 .listado-cursos h2 {
@@ -72,7 +73,7 @@ export default styled(CourseList)`
 }
 
 .listado-cursos-img {
-    width: 500px;
+    width: 100%;
      
     
 }
