@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 import contactImage from "../assets/img/undraw_News_re_6uub.png";
+import { TitleSection } from "../styles/styledComponents";
 
 function Contact({ className }) {
   return (
@@ -11,7 +12,7 @@ function Contact({ className }) {
         <Image src={contactImage} width={500} alt="" />
       </div>
       <div className="contacto-text ">
-        <h2>Suscribete para recibir Noticias</h2>
+        <TitleSection>Suscribete para recibir Noticias</TitleSection>
         <p>
           Si te gusta nuesrto contenido dejanos tu correo para enviarte noticias
           de nuestra pagina{" "}
@@ -31,17 +32,17 @@ export default styled(Contact)`
   align-items: center;
   color: black;
   text-align: center;
-  margin: 0 auto;
-flex-direction: column;
+  margin: 30px auto;
+  flex-direction: column;
 
-.contacto-img {
+  .contacto-img {
     width: 100%;
-}
-.contacto-img img {
+  }
+  .contacto-img img {
     width: 100%;
-}
+  }
 
-.contacto-text {
+  .contacto-text {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -50,37 +51,37 @@ flex-direction: column;
     align-content: center;
     margin: auto;
     justify-content: center;
-}
+  }
 
-.contacto-text > h2 {
+  .contacto-text > h2 {
     font-size: 30px;
     padding-bottom: 15px;
-}
+  }
 
-.contacto-text > p {
+  .contacto-text > p {
     font-size: 20px;
     padding-bottom: 15px;
-}
+  }
 
-form {
+  form {
     width: 100%;
     margin: 0 auto;
-}
+  }
 
-.contacto-text input[type="text"] {
+  .contacto-text input[type="text"] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
     float: left;
     width: 70%;
     background: #f1f1f1;
-}
+  }
 
-.contacto-text input:focus {
+  .contacto-text input:focus {
     border-color: green;
-}
+  }
 
-.contacto-text input[type="submit"] {
+  .contacto-text input[type="submit"] {
     float: left;
     width: 30%;
     padding: 10px;
@@ -91,23 +92,33 @@ form {
     border-left: none;
     /* Prevent double borders */
     cursor: pointer;
-}
+  }
 
-.contacto-text input[type="submit"]:hover {
+  .contacto-text input[type="submit"]:hover {
     background: #0b7dda;
-}
-@media screen and (min-width: 600px) {
-  width:600px;
+  }
+  @media screen and (min-width: 600px) {
+    width: 600px;
+    .contacto-img {
+      width: 80%;
+    }
+    .contacto-text {
+      width: 400px;
+    }
+  }
 
-  
-}
+  @media screen and (min-width: 800px) {
+    width: 800px;
+    flex-direction: row;
 
-@media screen and (min-width: 800px) {
-  width:800px;
-    flex-direction:row;
-
-    .contacto-img{width:70%}
-     
-  
-}
+    .contacto-img {
+      width: 50%;
+    }
+    .contacto-img img{
+      width: 100%;
+    }
+    .contacto-text {
+      width: 300px;
+    }
+  }
 `;

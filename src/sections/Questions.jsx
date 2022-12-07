@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import {TitleSection}from '../styles/styledComponents'
 
 function Questions({ className }) {
   return (
     <section className={className}>
       <div className="text">
         <div className="textContent">
-          <h2>Que es BIMCapacitacion...?</h2>
+          <TitleSection>
+           Que es BIMCapacitacion ...? 
+          </TitleSection>
           <p>
             BIMCapacitacion es una escuela con cursos enfocados en la
             metodología BIM, nuestra especialidad está en capacitar a tu equipo
@@ -24,12 +27,13 @@ function Questions({ className }) {
 }
 export default styled(Questions)`
   width: 100%;
+  
   display: flex;
   flex-direction:column;
   justify-content: space-between;
   align-items: center;
   color: black;
-  text-align: center;
+ 
 
   .questions-img {
     width: 100%;
@@ -44,24 +48,16 @@ export default styled(Questions)`
 
   .text {
     width: 100%;
-    margin: auto;
+    margin: 40px auto;
   }
   .textContent {
     margin: 0 30px;
+    
   }
-  h2 {
-    padding-bottom: 30px;
+  @media screen and (min-width: 800px) {
+      flex-direction: row;
+    .textContent{
+      max-width:450px;
+    }
   }
-  /* @media screen and (max-width: 800px) {
-    height: 100%;
-    .questions-img {
-      height: 500px;
-      background-position-y: 10px;
-      z-index: -1;
-    }
-    .text {
-      width: 50%;
-      padding: 0 50px;
-    }
-  } */
 `;

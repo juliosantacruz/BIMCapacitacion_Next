@@ -7,6 +7,7 @@ import   { leContext } from "../hooks/useContext";
  
 
 import cardImage2 from '../assets/img/FAMILIA DE ESPEJOS PARAMETRICOS.jpg'
+import { TitleSection } from '../styles/styledComponents';
 
 function PostList({className}) {
   const {postList, setPostList} = leContext()
@@ -18,7 +19,9 @@ function PostList({className}) {
   return (
     //listado-post
     <section className={className} >
-        <h2>Mira nuestros Tutoriales </h2>
+      <TitleSection>
+         Mira nuestros Tutoriales  
+        </TitleSection>
         {
           postArray?.map((post)=>{
             console.log(post)
