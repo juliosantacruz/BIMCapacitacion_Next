@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-
+import { wordSlicer } from "../utils"; 
 import cardImage1 from "../assets/img/COMO DESCARGAR E INSTALAR REVIT 2020.jpg";
 
 function CardPost({ className, post }) {
@@ -16,13 +16,16 @@ function CardPost({ className, post }) {
       <article className={className}>
         <div className="tarjeta-texto">
           <h2>{post.title}</h2>
-          <p>Aqui va el overview :D</p>
+          <p>{wordSlicer(post.overview, 150) }</p>
           <div className="tarjeta-categorias">
-            <b>REVIT - TUTORIAL - ARQUITECTURA</b>
+            <b>
+              {post.tags.map((tag)=> {
+                return(` - ${tag.title}`)})}
+            </b>
           </div>
         </div>
         <div className="tarjeta-img">
-          <Image src={cardImage1} width={500} alt="" />
+          <Image src={post.thumbnail} width={500} height={300} alt="" />
         </div>
       </article>
     </Link>

@@ -12,21 +12,20 @@ function Footer({ className }) {
 
       <div className="redes-sociales  ">
         <SocialMediaIcon className="facebook">
-          <a  href="#">
-            <i className="bx bxl-facebook" ></i>
+          <a href="#">
+            <i className="bx bxl-facebook"></i>
           </a>
         </SocialMediaIcon>
         <SocialMediaIcon className="instagram">
-          <a  href="#">
-             <i className="bx bxl-instagram"></i>
+          <a href="#">
+            <i className="bx bxl-instagram"></i>
           </a>
         </SocialMediaIcon>
         <SocialMediaIcon className="youtube">
-          <a  href="#">
-             <i className="bx bxl-youtube"></i>
+          <a href="#">
+            <i className="bx bxl-youtube"></i>
           </a>
         </SocialMediaIcon>
-         
       </div>
     </footer>
   );
@@ -47,16 +46,16 @@ export default styled(Footer)`
     width: 80px;
     object-fit: contain;
   }
-.js-dev{
-  width:40%;
-}
-  
- .redes-sociales{
-  width:60%;
-  display:flex;
-  flex-direction:row;
- }
-.facebook:hover {
+  .js-dev {
+    width: 40%;
+  }
+
+  .redes-sociales {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+  }
+  .facebook:hover {
     color: white;
     background-color: #4e66f8;
     border: solid 2px rgba(0, 0, 0, 0.418);
@@ -78,14 +77,23 @@ export default styled(Footer)`
     background-color: #ff0000;
     border: solid 2px rgba(0, 0, 0, 0.418);
   }
+  @media screen and (min-width: 600px) {
+    .js-dev {
+      width: 50%;
+    }
+
+    .redes-sociales {
+      width: 50%;
+    }
+  }
   @media screen and (min-width: 800px) {
-    .seccion-listado { 
+    .seccion-listado {
       flex-direction: row;
     }
     .listado-cursos-img img {
-    max-width: 500px;
-    
-  }}
+      max-width: 500px;
+    }
+  }
 `;
 
 export const SocialMediaIcon = styled.div`
@@ -99,7 +107,5 @@ export const SocialMediaIcon = styled.div`
   border: solid 2px black;
   transition: color 0.3s ease-in-out;
   font-size: 25px;
-  line-height:40px;
-
-  
+  line-height: 40px;
 `;
