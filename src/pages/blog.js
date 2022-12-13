@@ -3,16 +3,18 @@ import styled from 'styled-components';
 import CardBlog from '../elements/CardBlog';
 import   { leContext } from "../hooks/useContext";
 import { TitleMain } from '../styles/styledComponents';
-
-
+import { useFetch } from '../hooks/useFetch';
+import endpoints from '../services/api';
 
 
 
 function Blog({className}) {
-  const {postList, setPostList} = leContext()
-  const postArray = postList
 
-  console.log(postArray)
+  const postData = useFetch(endpoints.posts.post_list)
+  // const {postList, setPostList} = leContext()
+  const postArray = postData
+
+  // console.log(postArray)
 
 
   return (

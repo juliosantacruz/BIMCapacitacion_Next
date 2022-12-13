@@ -9,9 +9,9 @@ import   { leContext } from "../hooks/useContext";
 
 import { TitleSection } from '../styles/styledComponents';
 
-function PostList({className}) {
-  const {postList, setPostList} = leContext()
-  const postArray = postList
+function PostList({className,postData}) {
+   
+  const postArray = postData
   
    
 

@@ -1,6 +1,5 @@
 import { useState, useContext, createContext } from "react";
-import endpoints from "../services/api";
-import { useFetch } from "./useFetch";
+ 
 
 
 export const PostContext = createContext()

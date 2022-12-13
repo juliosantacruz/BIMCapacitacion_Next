@@ -11,9 +11,9 @@ import endpoints from "../services/api";
 
 
 function Home({ className }) {
-  const context = leContext()
+  // const context = leContext()
   const postData = useFetch(endpoints.posts.post_list)
-  context.setPostList(postData)
+  // context.setPostList(postData)
   // console.log('Navbar',postData);
  
 
@@ -27,7 +27,7 @@ function Home({ className }) {
       <Hero />
       <Questions />
       <CourseList />
-      <PostList />
+      <PostList postData={postData}/>
       <Contact displayImage={true}/>
     </>
   );
