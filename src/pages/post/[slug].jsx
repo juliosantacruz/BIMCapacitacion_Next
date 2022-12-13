@@ -14,10 +14,10 @@ function Slug({className}) {
   const router = useRouter()
 
   const postSlug = router.query.slug
-  console.log(postSlug)
+  // console.log(postSlug)
 
   const post = useFetch(endpoints.posts.post_detail(postSlug))
-  console.log(post)
+  // console.log(post)
  
   
 

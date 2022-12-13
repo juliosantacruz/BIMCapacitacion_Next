@@ -18,8 +18,8 @@ function Navbar({ className }) {
           <Link href="/" className="inicio">
             Inicio
           </Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/">Descargas</Link>
+          <Link href="/post">Blog</Link>
+          <Link href="/descargas">Descargas</Link>
         </div>
         <div className="boton-menu">
           <i className="bx bx-menu"></i>

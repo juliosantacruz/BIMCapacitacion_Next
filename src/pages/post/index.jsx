@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
-import CardBlog from '../elements/CardBlog';
-import   { leContext } from "../hooks/useContext";
-import { TitleMain } from '../styles/styledComponents';
-import { useFetch } from '../hooks/useFetch';
-import endpoints from '../services/api';
+import CardBlog from '../../elements/CardBlog';
+import   { leContext } from "../../hooks/useContext";
+import { TitleMain } from '../../styles/styledComponents';
+import { useFetch } from '../../hooks/useFetch';
+import endpoints from '../../services/api';
 
 
 
