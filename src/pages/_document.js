@@ -7,7 +7,7 @@ class MyDocument extends Document {
         <Head>
           <title>BIMCapacitacion</title>
           <meta charSet="utf-8" />
-          <link rel="manifest" href="/manifest.json" />
+           
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-7GKX3LC9WK"
