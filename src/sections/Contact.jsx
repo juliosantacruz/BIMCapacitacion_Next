@@ -5,18 +5,25 @@ import Image from "next/image";
 import contactImage from "../assets/img/undraw_News_re_6uub.png";
 import { TitleSection } from "../styles/styledComponents";
 
-function Contact({ className }) {
+function Contact({ className, displayImage }) {
+   
   return (
     <section className={className}>
-      <div className="contacto-img">
-        <Image src={contactImage} width={500} alt="" />
-      </div>
+      {displayImage && (
+        <div className="contacto-img">
+          <Image src={contactImage} width={500} alt="" />
+        </div>
+      )}
+
       <div className="contacto-text ">
         <TitleSection>Suscribete para recibir Noticias</TitleSection>
-        <p>
+        {displayImage && (
+          <p>
           Si te gusta nuesrto contenido dejanos tu correo para enviarte noticias
           de nuestra pagina{" "}
         </p>
+        )}
+        
         <form action="">
           <input type="text" placeholder="Email" />
           <input className="btn-submit" type="submit" />
@@ -40,6 +47,7 @@ export default styled(Contact)`
   }
   .contacto-img img {
     width: 100%;
+    height:auto;
   }
 
   .contacto-text {
@@ -55,12 +63,11 @@ export default styled(Contact)`
 
   .contacto-text > h2 {
     font-size: 30px;
-    padding-bottom: 15px;
   }
 
   .contacto-text > p {
     font-size: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
   }
 
   form {
@@ -114,11 +121,11 @@ export default styled(Contact)`
     .contacto-img {
       width: 50%;
     }
-    .contacto-img img{
+    .contacto-img img {
       width: 100%;
     }
     .contacto-text {
-      width: 300px;
+      width: 80%;
     }
   }
 `;

@@ -73,6 +73,7 @@ export default styled(CourseList)`
 
   .listado-cursos-img img {
     width: 100%;
+    height:auto;
     object-fit: cover;
   }
 

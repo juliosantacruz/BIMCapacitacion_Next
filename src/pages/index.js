@@ -28,7 +28,7 @@ function Home({ className }) {
       <Questions />
       <CourseList />
       <PostList />
-      <Contact />
+      <Contact displayImage={true}/>
     </>
   );
 }

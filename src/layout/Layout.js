@@ -4,13 +4,19 @@ import Footer from './Footer'
 import Navbar from './Navbar'
 
 export default function Layout({children}) {
+ window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-7GKX3LC9WK');
   
   return (
     <>
     <Head>
      
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'/>
+     
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7GKX3LC9WK"></script>
+ 
     </Head>
     <Navbar/>
     
@@ -18,7 +24,7 @@ export default function Layout({children}) {
     <Footer/>
 
      
-    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+     
     
     </>
   )

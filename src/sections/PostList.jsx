@@ -6,14 +6,14 @@ import CardPost from '../elements/CardPost'
 import   { leContext } from "../hooks/useContext";
  
 
-import cardImage2 from '../assets/img/FAMILIA DE ESPEJOS PARAMETRICOS.jpg'
+
 import { TitleSection } from '../styles/styledComponents';
 
 function PostList({className}) {
   const {postList, setPostList} = leContext()
   const postArray = postList
   
-  // console.log('Postlist',postList);
+   
 
 
   return (
@@ -24,7 +24,7 @@ function PostList({className}) {
         </TitleSection>
         {
           postArray?.map((post)=>{
-            console.log(post)
+            // console.log(post)
             return(
               <CardPost key={post.id} post={post}/>
 

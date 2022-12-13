@@ -56,7 +56,7 @@ export default styled(Navbar)`
 
   .logo img {
     width: 100px;
-    height: 100%;
+    height: auto;
     vertical-align: top;
     object-fit: contain;
   }
@@ -66,7 +66,7 @@ export default styled(Navbar)`
   }
 
   .nav .enlaces-header > a {
-    padding: 0 15px;
+    padding: 10px 15px;
     color: #000000;
     text-decoration: none;
     font-weight: 700;
@@ -95,7 +95,7 @@ export default styled(Navbar)`
       width: 140px;
     }
     .nav .enlaces-header > a {
-    padding: 0 20px;
+    padding: 10px 20px;
     font-size: 20px;
      
   }

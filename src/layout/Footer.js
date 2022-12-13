@@ -1,29 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import { Facebook, Instagram, Youtube } from 'react-feather';
 
+ 
 import jsLogo from "../assets/img/logo_450x200_azul_trans.png";
 function Footer({ className }) {
   return (
     <footer className={className}>
-      <div className="js-dev  ">
+      <div className="js-dev">
         <Image src={jsLogo} width={300} alt="" />
       </div>
 
       <div className="redes-sociales  ">
         <SocialMediaIcon className="facebook">
           <a href="#">
-            <i className="bx bxl-facebook"></i>
+           
+          <Facebook/>
           </a>
         </SocialMediaIcon>
         <SocialMediaIcon className="instagram">
           <a href="#">
-            <i className="bx bxl-instagram"></i>
+          <Instagram/>
           </a>
         </SocialMediaIcon>
         <SocialMediaIcon className="youtube">
           <a href="#">
-            <i className="bx bxl-youtube"></i>
+          <Youtube/>
           </a>
         </SocialMediaIcon>
       </div>
@@ -43,17 +46,19 @@ export default styled(Footer)`
   background-color: rgba(230, 230, 230, 0.658);
   height: 120px;
   img {
-    width: 80px;
+    width: 140px;
+    height:auto;
     object-fit: contain;
   }
   .js-dev {
-    width: 40%;
+    width: 60%;
   }
 
   .redes-sociales {
     width: 60%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
   .facebook:hover {
     color: white;
@@ -101,11 +106,17 @@ export const SocialMediaIcon = styled.div`
   justify-content: center;
   align-items: center;
   margin: 10px;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   border: solid 2px black;
   transition: color 0.3s ease-in-out;
   font-size: 25px;
-  line-height: 40px;
+  line-height: 30px;
+
+  @media screen and (min-width: 600px) {
+    margin: 20px;
+  height: 40px;
+  width: 40px;
+  }
 `;
