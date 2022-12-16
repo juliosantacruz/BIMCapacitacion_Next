@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
-          <title>BIMCapacitacion</title>
+          
           <meta charSet="utf-8" />
            
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GKX3LC9WK"></script>
