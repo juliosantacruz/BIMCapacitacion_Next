@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import Layout from "../layout/Layout";
-import { ContextProvider } from "../hooks/useContext";
+ 
 
 
 
