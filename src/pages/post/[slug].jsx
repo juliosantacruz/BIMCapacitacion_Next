@@ -1,49 +1,30 @@
-import React from "react"; 
+import React from "react";
 import styled from "styled-components";
 import { MainButton } from "../../styles/styledComponents";
 import { ArrowLeft } from "react-feather";
-
+import { useRouter } from "next/router";
 import endpoints from "../../services/api/index";
-import fetch from 'isomorphic-unfetch'
-
-
-
-
-export const getServerSideProps = async ({params})=>{
-  
-  const response = await fetch(endpoints.posts.post_detail(params.slug))
-  const data = await response.json()
-  return {
-    props:{
-      post : data
-    }
-  }
-}
-
-
-
-//Youtube Video
-import YouTube from "react-youtube";
-import getYouTubeID from "get-youtube-id";
+import fetch from "isomorphic-unfetch";
 import ShareSM from "../../elements/ShareSM";
+import CardVideoYT from "../../elements/CardVideoYT";
+import Contact from '../../sections/Contact'
 
-
-function Slug({ className, post }) {
-  
-  // Youtube Component
-  const youtubeId = getYouTubeID(post?.video);
-
-  const opts = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
+export const getServerSideProps = async ({ params }) => {
+  const response = await fetch(endpoints.posts.post_detail(params.slug));
+  const data = await response.json();
+  return {
+    props: {
+      post: data,
     },
   };
+};
+
+function Slug({ className, post }) {
+  const router = useRouter();
+  
 
   function returnBtn() {
-    console.log("holis");
+    router.back();
   }
   return (
     <section className={className}>
@@ -57,8 +38,11 @@ function Slug({ className, post }) {
       </div>
 
       <div dangerouslySetInnerHTML={{ __html: post?.content }}></div>
-      {post?.video && <YouTube videoId={youtubeId} opts={opts} />}
-      <ShareSM/>
+      {post?.video && <CardVideoYT videoURL={post.video}/> }
+
+      <ShareSM />
+
+      <Contact/>
     </section>
   );
 }
@@ -66,8 +50,5 @@ function Slug({ className, post }) {
 export default styled(Slug)`
   width: 80vw;
   margin: 0 auto;
-  iframe {
-    width: 100%;
-    height: auto;
-  }
+  
 `;
