@@ -10,8 +10,8 @@ class MyDocument extends Document {
           
           <meta charSet="utf-8" />
            
-          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-7GKX3LC9WK"></Script>
-          <Script
+          <Script id="GA" async src="https://www.googletagmanager.com/gtag/js?id=G-7GKX3LC9WK"></Script>
+          <Script id="GAOptions"
             dangerouslySetInnerHTML={{
               __html: `
               window.dataLayer = window.dataLayer || [];
