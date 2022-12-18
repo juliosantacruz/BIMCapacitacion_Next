@@ -1,8 +1,4 @@
-import React from "react";
-import { useRouter } from "next/router";
-
-import { useState } from "react";
-
+import React from "react"; 
 import styled from "styled-components";
 import { MainButton } from "../../styles/styledComponents";
 import { ArrowLeft } from "react-feather";
