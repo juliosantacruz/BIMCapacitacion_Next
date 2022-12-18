@@ -5,16 +5,24 @@ import CourseList from "../sections/CourseList";
 import Hero from "../sections/Hero";
 import PostList from "../sections/PostList";
 import Questions from "../sections/Questions";
-import { useFetch } from "../hooks/useFetch"; 
-import   { leContext } from "../hooks/useContext";
+import fetch from 'isomorphic-unfetch'
 import endpoints from "../services/api";
 
 
-function Home({ className }) {
-  // const context = leContext()
-  const postData = useFetch(endpoints.posts.post_list)
-  // context.setPostList(postData)
-  // console.log('Navbar',postData);
+
+export const getServerSideProps = async ()=>{
+  const response = await fetch(endpoints.posts.post_list)
+  const data = await response.json()
+  return {
+    props:{
+      postData : data
+    }
+  }
+}
+
+
+
+function Home({ className, postData }) {
  
 
   return (

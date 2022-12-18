@@ -2,63 +2,40 @@ import React from "react";
 import { useRouter } from "next/router";
 
 import { useState } from "react";
-import { useFetch } from "../../hooks/useFetch";
-import endpoints from "../../services/api/index";
+
 import styled from "styled-components";
 import { MainButton } from "../../styles/styledComponents";
 import { ArrowLeft } from "react-feather";
 
+import endpoints from "../../services/api/index";
+import fetch from 'isomorphic-unfetch'
+
+
+
+
+export const getServerSideProps = async ({params})=>{
+  
+  const response = await fetch(endpoints.posts.post_detail(params.slug))
+  const data = await response.json()
+  return {
+    props:{
+      post : data
+    }
+  }
+}
+
+
+
 //Youtube Video
 import YouTube from "react-youtube";
 import getYouTubeID from "get-youtube-id";
+import ShareSM from "../../elements/ShareSM";
 
-// Share post
-import {
-  FacebookShareButton,
-  EmailShareButton,
-  WhatsappShareButton,
-  FacebookMessengerShareButton,
-  OKShareCount,
-  PinterestShareCount,
-  RedditShareCount,
-  TumblrShareCount,
-  VKShareCount,
-} from "react-share";
-import {
-  EmailIcon,
-  FacebookIcon,
-  FacebookMessengerIcon,
-  HatenaIcon,
-  InstapaperIcon,
-  LineIcon,
-  LinkedinIcon,
-  LivejournalIcon,
-  MailruIcon,
-  OKIcon,
-  PinterestIcon,
-  PocketIcon,
-  RedditIcon,
-  TelegramIcon,
-  TumblrIcon,
-  TwitterIcon,
-  ViberIcon,
-  VKIcon,
-  WeiboIcon,
-  WhatsappIcon,
-  WorkplaceIcon,
-} from "react-share";
 
-function Slug({ className }) {
-  const router = useRouter();
-  const postSlug = router.query.slug;
-  const postAsPath = router.asPath.slice(6, 100);
-  // console.log(postSlug)
-  console.log(postAsPath);
-
-  const post = useFetch(endpoints.posts.post_detail(postAsPath));
-
+function Slug({ className, post }) {
+  
   // Youtube Component
-  const youtubeId = getYouTubeID(post.video);
+  const youtubeId = getYouTubeID(post?.video);
 
   const opts = {
     height: "390",
@@ -84,18 +61,8 @@ function Slug({ className }) {
       </div>
 
       <div dangerouslySetInnerHTML={{ __html: post?.content }}></div>
-      {post.video && <YouTube videoId={youtubeId} opts={opts} />}
-      <div className="shareSocialMedia">
-        <FacebookShareButton url={'juliosantacruz.dev'}>
-          <FacebookIcon size={32} round={true}/>
-        </FacebookShareButton>
-        <EmailShareButton url={'juliosantacruz.dev'}>
-          <EmailIcon size={32} round={true}/>
-        </EmailShareButton>
-        <FacebookMessengerShareButton url={'juliosantacruz.dev'}>
-          <FacebookMessengerIcon size={32} round={true}/>
-        </FacebookMessengerShareButton>
-      </div>
+      {post?.video && <YouTube videoId={youtubeId} opts={opts} />}
+      <ShareSM/>
     </section>
   );
 }

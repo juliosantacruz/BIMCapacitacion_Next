@@ -1,20 +1,28 @@
 import React from 'react'
 import styled from 'styled-components';
 import CardBlog from '../../elements/CardBlog';
-import   { leContext } from "../../hooks/useContext";
+
 import { TitleMain } from '../../styles/styledComponents';
-import { useFetch } from '../../hooks/useFetch';
-import endpoints from '../../services/api';
+import fetch from 'isomorphic-unfetch'
+import endpoints from "../../services/api";
 
 
 
-function Blog({className}) {
+export const getServerSideProps = async ()=>{
+  const response = await fetch(endpoints.posts.post_list)
+  const data = await response.json()
+  return {
+    props:{
+      postArray : data
+    }
+  }
+}
 
-  const postData = useFetch(endpoints.posts.post_list)
-  // const {postList, setPostList} = leContext()
-  const postArray = postData
 
-  // console.log(postArray)
+
+function Blog({className, postArray}) {
+
+  
 
 
   return (

@@ -1,4 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Script from 'next/script'
+
 
 class MyDocument extends Document {
   render() {
@@ -8,8 +10,8 @@ class MyDocument extends Document {
           
           <meta charSet="utf-8" />
            
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GKX3LC9WK"></script>
-          <script
+          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-7GKX3LC9WK"></Script>
+          <Script
             dangerouslySetInnerHTML={{
               __html: `
               window.dataLayer = window.dataLayer || [];
