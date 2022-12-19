@@ -38,13 +38,18 @@ import {
 } from "react-share";
 import styled from "styled-components";
 
-function ShareSM({ className }) {
+function ShareSM({ className, post }) {
   const router = useRouter()
   const shareToShare = 'www.bimcapacitacion.com'+router.asPath
-  
+  const copyMessage = `
+  Encontre el post de:
+  ${post.title}
+  es de BIMCapacitacion, tienes que verlo .. :D
+  te dejo el link:
+  `
+  const title = post.title
 
-
-
+console.log(copyMessage)
 
   return (
     <div className={className}>
@@ -60,11 +65,11 @@ function ShareSM({ className }) {
         <WhatsappIcon size={42} round={true} />
       </WhatsappShareButton>
       
-      <TwitterShareButton url={shareToShare}>
+      <TwitterShareButton url={shareToShare} title={title} hashtags={['revit','bimcapacitacion','cursosrevit']}>
       <TwitterIcon size={42} round={true} />
       </TwitterShareButton>
       
-      <EmailShareButton url={shareToShare}>
+      <EmailShareButton url={shareToShare} body={copyMessage}>
         <EmailIcon size={42} round={true} />
       </EmailShareButton>
     </div>

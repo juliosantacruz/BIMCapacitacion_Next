@@ -2,41 +2,57 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { wordSlicer } from "../utils"; 
-import cardImage1 from "../assets/img/COMO DESCARGAR E INSTALAR REVIT 2020.jpg";
+import { wordSlicer } from "../utils";
+
 
 function CardPost({ className, post }) {
   return (
     <Link
       href={{
         pathname: `/post/${post.slug}`,
-        
       }}
     >
       <article className={className}>
-        <div className="tarjeta-texto">
-          <h2>{post.title}</h2>
-          <p>{wordSlicer(post.overview, 150) }</p>
+        <div className="headerContent">
+          <h3>{post.title.toUpperCase()}</h3>
+        </div>
+        <CardContent>
+          <div className="tarjeta-texto">
+            <p>{wordSlicer(post.overview, 150)}</p>
+          </div>
+          <div className="tarjeta-img">
+            <Image src={post.thumbnail} width={200} height={150} alt="" />
+          </div>
+        </CardContent>
+        <div className="cardFooter">
           <div className="tarjeta-categorias">
             <b>
-              {post.tags.map((tag)=> {
-                return(` - ${tag.title}`)})}
+              {post.tags.map((tag) => {
+                return ` - ${tag.title}`;
+              })}
             </b>
           </div>
-        </div>
-        <div className="tarjeta-img">
-          <Image src={post.thumbnail} width={500} height={300} alt="" />
         </div>
       </article>
     </Link>
   );
 }
-export default styled(CardPost)`
+export const CardContent = styled.div`
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 650px;
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+`;
+export default styled(CardPost)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
   height: 100%;
   border: solid 1px black;
   border-radius: 30px;
@@ -61,17 +77,12 @@ export default styled(CardPost)`
     height: 100%;
   }
 
-  .tarjeta-texto h2 {
-    font-size: 22px;
+  h3 {
+    margin: 0 0 10px 0;
     /* padding: 0; */
   }
-  .tarjeta-texto h2 {
-    margin: 10px 0;
-  }
-  .tarjeta-texto p {
-    margin: 10px 0;
-  }
-  .tarjeta-img>img {
+
+  .tarjeta-img > img {
     height: 120px;
     width: auto;
   }
@@ -79,14 +90,11 @@ export default styled(CardPost)`
   .tarjeta-categorias {
     font-weight: 600;
     font-style: oblique;
+    margin: 10px 0 0 0;
   }
 
-  .tarjeta-icons {
-    display: block;
+  @media screen and (min-width: 600px) {
+    /* flex-direction: row; */
+    max-width: 700px;
   }
-
-  @media screen and (max-width: 650px) {
-    width: 80%;
-  }
-
 `;

@@ -35,7 +35,7 @@ function CourseList({ className }) {
           </ul>
         </div>
         <div className="listado-cursos-img">
-          <Image src={LogoTransparente} alt="" width={500} />
+          <Image src={LogoTransparente} alt="" width={500}  height={300}/>
         </div>
       </div>
     </section>

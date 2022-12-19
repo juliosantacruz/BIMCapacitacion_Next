@@ -11,7 +11,7 @@ function Contact({ className, displayImage }) {
     <section className={className}>
       {displayImage && (
         <div className="contacto-img">
-          <Image src={contactImage} width={500} alt="" />
+          <Image src={contactImage} width={500} height={300} alt="" />
         </div>
       )}
 

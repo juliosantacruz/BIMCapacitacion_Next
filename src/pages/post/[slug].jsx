@@ -40,7 +40,7 @@ function Slug({ className, post }) {
       <div dangerouslySetInnerHTML={{ __html: post?.content }}></div>
       {post?.video && <CardVideoYT videoURL={post.video}/> }
 
-      <ShareSM />
+      <ShareSM post={post} />
 
       <Contact/>
     </section>

@@ -9,7 +9,7 @@ function Footer({ className }) {
   return (
     <footer className={className}>
       <div className="js-dev">
-        <Image src={jsLogo} width={300} alt="" />
+        <Image src={jsLogo} width={160} height={80} alt="" />
       </div>
 
       <div className="redes-sociales  ">
@@ -106,8 +106,8 @@ export const SocialMediaIcon = styled.div`
   justify-content: center;
   align-items: center;
   margin: 10px;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   border: solid 2px black;
   transition: color 0.3s ease-in-out;
@@ -116,7 +116,7 @@ export const SocialMediaIcon = styled.div`
 
   @media screen and (min-width: 600px) {
     margin: 20px;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   }
 `;

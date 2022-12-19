@@ -25,10 +25,10 @@ function PostList({className,postData}) {
         {
           postArray?.map((post)=>{
             // console.log(post)
-            return(
-              <CardPost key={post.id} post={post}/>
-
-            )
+            if(post.featured){
+            return(<CardPost key={post.id} post={post}/>)
+            }
+            
           })
         }
          

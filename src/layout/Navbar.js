@@ -11,7 +11,7 @@ function Navbar({ className }) {
       <section className=" nav">
         <div className="logo">
           <Link href="/">
-            <Image src={logo} alt="soy un logo" />
+            <Image src={logo} width={150} height={80} alt="soy un logo" />
           </Link>
         </div>
         <div className="enlaces-header">
@@ -56,7 +56,7 @@ export default styled(Navbar)`
 
   .logo img {
     width: 100px;
-    height: auto;
+     
     vertical-align: top;
     object-fit: contain;
   }
