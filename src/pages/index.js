@@ -1,12 +1,12 @@
 import Head from "next/head";
 import styled from "styled-components";
-import Contact from "../sections/Contact";
-import CourseList from "../sections/CourseList";
-import Hero from "../sections/Hero";
-import PostList from "../sections/PostList";
-import Questions from "../sections/Questions";
+import Contact from "@sections/Contact";
+import CourseList from "@sections/CourseList";
+import Hero from "@sections/Hero";
+import PostList from "@sections/PostList";
+import Questions from "@sections/Questions";
 import fetch from 'isomorphic-unfetch'
-import endpoints from "../services/api";
+import endpoints from "@services/api";
 
 
 

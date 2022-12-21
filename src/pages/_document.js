@@ -7,6 +7,7 @@ class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
+          <link rel="icon" type="image/x-icon" href="./bimicon.ico"/>
           <meta charSet="utf-8" />
           {/* <!-- SOCIALMEDIA TAG --> */}
           <meta property="og:title" content="BIMCapacitacion" />

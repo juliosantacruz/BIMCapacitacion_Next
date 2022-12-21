@@ -5,6 +5,27 @@ import Image from "next/image";
 import contactImage from "../assets/img/undraw_News_re_6uub.png";
 import { TitleSection } from "../styles/styledComponents";
 
+// var myHeaders = new Headers();
+// myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+// var urlencoded = new URLSearchParams();
+// urlencoded.append("email", "tes222t@test.com");
+
+// var requestOptions = {
+//   method: 'POST',
+//   headers: myHeaders,
+//   body: urlencoded,
+//   redirect: 'follow'
+// };
+
+// fetch("https://p01--restapi--qzvdk8qp7kvm.code.run/bimcapacitacion/api/v1/signup", requestOptions)
+//   .then(response => response.text())
+//   .then(result => console.log(result))
+//   .catch(error => console.log('error', error));
+
+
+
+
 function Contact({ className, displayImage }) {
    
   return (
@@ -41,9 +62,11 @@ export default styled(Contact)`
   text-align: center;
   margin: 30px auto;
   flex-direction: column;
+  
 
   .contacto-img {
     width: 100%;
+    
   }
   .contacto-img img {
     width: 100%;
